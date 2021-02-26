@@ -14,6 +14,9 @@
 		F48ECB0525E610D1005C1982 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F48ECB0425E610D1005C1982 /* Assets.xcassets */; };
 		F48ECB0825E610D1005C1982 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F48ECB0625E610D1005C1982 /* LaunchScreen.storyboard */; };
 		F48ECB1325E610D1005C1982 /* GitCommit_mTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48ECB1225E610D1005C1982 /* GitCommit_mTests.swift */; };
+		F48ECB2D25E8EE75005C1982 /* GitHubModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48ECB2C25E8EE75005C1982 /* GitHubModels.swift */; };
+		F48ECB2F25E8EEFC005C1982 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48ECB2E25E8EEFC005C1982 /* RequestManager.swift */; };
+		F48ECB3125E8F25C005C1982 /* GiitHubConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48ECB3025E8F25C005C1982 /* GiitHubConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 		F48ECB0E25E610D1005C1982 /* GitCommit-mTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GitCommit-mTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F48ECB1225E610D1005C1982 /* GitCommit_mTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitCommit_mTests.swift; sourceTree = "<group>"; };
 		F48ECB1425E610D1005C1982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F48ECB2C25E8EE75005C1982 /* GitHubModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubModels.swift; sourceTree = "<group>"; };
+		F48ECB2E25E8EEFC005C1982 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		F48ECB3025E8F25C005C1982 /* GiitHubConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiitHubConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,9 @@
 				F48ECAFB25E610CD005C1982 /* AppDelegate.swift */,
 				F48ECAFD25E610CD005C1982 /* SceneDelegate.swift */,
 				F48ECAFF25E610CD005C1982 /* ViewController.swift */,
+				F48ECB2C25E8EE75005C1982 /* GitHubModels.swift */,
+				F48ECB2E25E8EEFC005C1982 /* RequestManager.swift */,
+				F48ECB3025E8F25C005C1982 /* GiitHubConstants.swift */,
 				F48ECB0125E610CD005C1982 /* Main.storyboard */,
 				F48ECB0425E610D1005C1982 /* Assets.xcassets */,
 				F48ECB0625E610D1005C1982 /* LaunchScreen.storyboard */,
@@ -200,8 +209,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F48ECB2D25E8EE75005C1982 /* GitHubModels.swift in Sources */,
 				F48ECB0025E610CD005C1982 /* ViewController.swift in Sources */,
+				F48ECB3125E8F25C005C1982 /* GiitHubConstants.swift in Sources */,
 				F48ECAFC25E610CD005C1982 /* AppDelegate.swift in Sources */,
+				F48ECB2F25E8EEFC005C1982 /* RequestManager.swift in Sources */,
 				F48ECAFE25E610CD005C1982 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
