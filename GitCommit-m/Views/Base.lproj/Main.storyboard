@@ -19,11 +19,11 @@
                                 <rect key="frame" x="20" y="44" width="374" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="commitCell" rowHeight="114" id="Rih-aE-A57" customClass="GitHubCommitsTableViewCell" customModule="GitCommit_m" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="374" height="114"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="commitCell" rowHeight="25" id="Rih-aE-A57" customClass="GitHubCommitsTableViewCell" customModule="GitCommit_m" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="374" height="25"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rih-aE-A57" id="UPl-0R-8q8">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="114"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="25"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kv-TG-sYT">
@@ -38,9 +38,8 @@
                                                     <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypr-On-EYn">
-                                                    <rect key="frame" x="10" y="18" width="354" height="86"/>
-                                                    <string key="text">This is a very long commit message copyThis is a very long commit message copyThis is a very long commit message copyThis is a very long commit message copyThis is a very long commit message copyThis is a very long commit message copyThis is a very long commit message copy</string>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypr-On-EYn">
+                                                    <rect key="frame" x="10" y="15" width="354" height="0.0"/>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
