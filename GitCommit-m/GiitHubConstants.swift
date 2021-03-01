@@ -46,3 +46,8 @@ extension RequestError: CustomStringConvertible {
         }
     }
 }
+
+struct GitConstants {
+    static let path = "https://api.github.com/repos/guerrero-alan/GitCommit-m/commits"
+    static let title = "Commits"
+}
