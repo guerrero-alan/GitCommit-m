@@ -52,7 +52,7 @@ extension GitHubCommitsViewController: UITableViewDataSource, UITableViewDelegat
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let view = Bundle.main.loadNibNamed("GitHubHeaderView", owner: nil, options: nil)?[0] as? GitHubHeaderView else { return nil }
-        view.titleLabel.text = "Commits"
+        view.titleLabel.text = GitConstants.title
         return view
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
