@@ -50,4 +50,8 @@ extension RequestError: CustomStringConvertible {
 struct GitConstants {
     static let path = "https://api.github.com/repos/guerrero-alan/GitCommit-m/commits"
     static let title = "Commits"
+    static let alertTitle = "We had trouble loading this repository's commits"
+    static let alertMessage = "Would you like to try again?"
+    static let yes = "Yes"
+    static let no = "No"
 }

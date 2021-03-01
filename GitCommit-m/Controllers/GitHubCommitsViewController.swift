@@ -17,6 +17,7 @@ class GitHubCommitsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.isHidden = true
         commitsTableView.delegate = self
         commitsTableView.dataSource = self
         toggleSpinnerAnimation(isOn: true)
@@ -35,6 +36,7 @@ class GitHubCommitsViewController: UIViewController {
                 }
             case .failure(_):
                 self.toggleSpinnerAnimation(isOn: false)
+                self.showErrorAlert()
                 return
             }
         }
@@ -50,6 +52,20 @@ class GitHubCommitsViewController: UIViewController {
                 self.commitsTableView.backgroundView = nil
             }
         }
+    }
+    
+    func showErrorAlert() {
+        let alert = UIAlertController(title: GitConstants.alertTitle, message: GitConstants.alertMessage, preferredStyle: UIAlertController.Style.alert)
+        let noAction = UIAlertAction(title: GitConstants.yes, style: .default) {
+            _ in
+            self.loadGitHubCommits()
+        }
+        let yesAction = UIAlertAction(title: GitConstants.no, style: .destructive) { _ in
+            return
+        }
+        alert.addAction(yesAction)
+        alert.addAction(noAction)
+        navigationController?.present(alert, animated: true, completion: nil)
     }
 }
 
