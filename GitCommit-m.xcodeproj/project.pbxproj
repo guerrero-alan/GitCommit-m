@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F44F269325EC6D84006CD7A8 /* GitHubHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F44F269225EC6D84006CD7A8 /* GitHubHeaderView.xib */; };
+		F44F269525ECD960006CD7A8 /* GitHubCommitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44F269425ECD960006CD7A8 /* GitHubCommitsViewModel.swift */; };
 		F48ECAFC25E610CD005C1982 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48ECAFB25E610CD005C1982 /* AppDelegate.swift */; };
 		F48ECAFE25E610CD005C1982 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48ECAFD25E610CD005C1982 /* SceneDelegate.swift */; };
 		F48ECB0325E610CD005C1982 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F48ECB0125E610CD005C1982 /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		F44F269225EC6D84006CD7A8 /* GitHubHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GitHubHeaderView.xib; sourceTree = "<group>"; };
+		F44F269425ECD960006CD7A8 /* GitHubCommitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubCommitsViewModel.swift; sourceTree = "<group>"; };
 		F48ECAF825E610CD005C1982 /* GitCommit-m.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GitCommit-m.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F48ECAFB25E610CD005C1982 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F48ECAFD25E610CD005C1982 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F44F269625ECD98E006CD7A8 /* ViiewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F44F269425ECD960006CD7A8 /* GitHubCommitsViewModel.swift */,
+			);
+			path = ViiewModels;
+			sourceTree = "<group>";
+		};
 		F48ECAEF25E610CD005C1982 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +104,7 @@
 				F48ECB3225E8F4A9005C1982 /* Networking */,
 				F48ECB3325E8F4DC005C1982 /* Models */,
 				F48ECB3725E8F52D005C1982 /* Views */,
+				F44F269625ECD98E006CD7A8 /* ViiewModels */,
 				F48ECB3625E8F512005C1982 /* Controllers */,
 				F48ECB3025E8F25C005C1982 /* GiitHubConstants.swift */,
 				F48ECB0425E610D1005C1982 /* Assets.xcassets */,
@@ -250,6 +261,7 @@
 			files = (
 				F48ECB2D25E8EE75005C1982 /* GitHubModels.swift in Sources */,
 				F48ECB3525E8F4FF005C1982 /* GitHubCommitsViewController.swift in Sources */,
+				F44F269525ECD960006CD7A8 /* GitHubCommitsViewModel.swift in Sources */,
 				F48ECB3B25E8F779005C1982 /* GitHubCommitsTableViewCell.swift in Sources */,
 				F48ECB3125E8F25C005C1982 /* GiitHubConstants.swift in Sources */,
 				F48ECAFC25E610CD005C1982 /* AppDelegate.swift in Sources */,

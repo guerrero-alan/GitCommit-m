@@ -11,28 +11,26 @@ import UIKit
 class GitHubCommitsViewController: UIViewController {
     
     @IBOutlet weak var commitsTableView: UITableView!
-    
-    var array = [GitCommitResponse]()
+    let viewModel = GitHubCommitsViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         commitsTableView.delegate = self
         commitsTableView.dataSource = self
-
-        let path = GitConstants.path
-        HTTPRequestManager(path: path, method: .get, headers: nil).getGitCommits {
-            response in
-            switch response {
-            case .success(let data):
-                if let data = data {
-                    self.array = data
-                    DispatchQueue.main.async {
-                        self.commitsTableView.reloadData()
-                    }
+        loadGitHubCommits()
+    }
+    
+    func loadGitHubCommits() {
+        viewModel.loadGitHubCommits() {
+            success in
+            switch success {
+            case .success:
+                DispatchQueue.main.async {
+                    self.commitsTableView.reloadData()
                 }
-            case .failure(let error):
-                print(error)
+            case .failure(_):
+                return
             }
         }
     }
@@ -40,14 +38,16 @@ class GitHubCommitsViewController: UIViewController {
 
 extension GitHubCommitsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return array.count
+        return viewModel.getDataCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = commitsTableView.dequeueReusableCell(withIdentifier: "commitCell", for: indexPath) as? GitHubCommitsTableViewCell else { return UITableViewCell() }
-        cell.messageLabel.text = array[indexPath.row].commit.message
-        cell.autthorLabel.text = array[indexPath.row].commit.committer.name
-        cell.shaLabel.text = array[indexPath.row].sha
+        guard let cell = commitsTableView.dequeueReusableCell(withIdentifier: "commitCell", for: indexPath) as? GitHubCommitsTableViewCell, let response = viewModel.getCommitResponse(at: indexPath.row) else { return UITableViewCell() }
+        let commit = response.commit
+        let sha = response.sha
+        cell.messageLabel.text = commit.message
+        cell.autthorLabel.text = commit.committer.name
+        cell.shaLabel.text = sha
         return cell
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
