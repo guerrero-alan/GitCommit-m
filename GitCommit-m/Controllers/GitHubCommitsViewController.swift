@@ -17,12 +17,21 @@ class GitHubCommitsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.isHidden = true
         commitsTableView.delegate = self
         commitsTableView.dataSource = self
+        navigationController?.navigationBar.isHidden = true
+        setUpNavigationBar()
         toggleSpinnerAnimation(isOn: true)
         loadGitHubCommits()
-        
+    }
+    @IBAction func refreshButtonPressed(_ sender: UIBarButtonItem) {
+        loadGitHubCommits()
+    }
+    
+    func setUpNavigationBar() {
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
     }
     
     func loadGitHubCommits() {
@@ -31,6 +40,7 @@ class GitHubCommitsViewController: UIViewController {
             switch success {
             case .success:
                 DispatchQueue.main.async {
+                    self.navigationController?.navigationBar.isHidden = true
                     self.toggleSpinnerAnimation(isOn: false)
                     self.commitsTableView.reloadData()
                 }
@@ -56,15 +66,15 @@ class GitHubCommitsViewController: UIViewController {
     
     func showErrorAlert() {
         let alert = UIAlertController(title: GitConstants.alertTitle, message: GitConstants.alertMessage, preferredStyle: UIAlertController.Style.alert)
-        let noAction = UIAlertAction(title: GitConstants.yes, style: .default) {
+        let yesAction = UIAlertAction(title: GitConstants.yes, style: .default) {
             _ in
             self.loadGitHubCommits()
         }
-        let yesAction = UIAlertAction(title: GitConstants.no, style: .destructive) { _ in
-            return
+        let noAction = UIAlertAction(title: GitConstants.no, style: .destructive) { _ in
+            self.navigationController?.navigationBar.isHidden = false
         }
-        alert.addAction(yesAction)
         alert.addAction(noAction)
+        alert.addAction(yesAction)
         navigationController?.present(alert, animated: true, completion: nil)
     }
 }
