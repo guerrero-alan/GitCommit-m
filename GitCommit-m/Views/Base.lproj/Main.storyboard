@@ -76,13 +76,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="6Ff-5M-vDj">
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="6ep-2j-Zuh">
-                            <connections>
-                                <action selector="refreshButtonPressed:" destination="BYZ-38-t0r" id="CES-oL-Lpg"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="6Ff-5M-vDj"/>
                     <connections>
                         <outlet property="commitsTableView" destination="SX4-RE-oxM" id="uxc-yr-a31"/>
                     </connections>

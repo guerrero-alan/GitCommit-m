@@ -20,21 +20,11 @@ class GitHubCommitsViewController: UIViewController {
         commitsTableView.delegate = self
         commitsTableView.dataSource = self
         navigationController?.navigationBar.isHidden = true
-        setUpNavigationBar()
-        toggleSpinnerAnimation(isOn: true)
         loadGitHubCommits()
-    }
-    @IBAction func refreshButtonPressed(_ sender: UIBarButtonItem) {
-        loadGitHubCommits()
-    }
-    
-    func setUpNavigationBar() {
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = true
     }
     
     func loadGitHubCommits() {
+        toggleSpinnerAnimation(isOn: true)
         viewModel.loadGitHubCommits() {
             success in
             switch success {
@@ -70,9 +60,7 @@ class GitHubCommitsViewController: UIViewController {
             _ in
             self.loadGitHubCommits()
         }
-        let noAction = UIAlertAction(title: GitConstants.no, style: .destructive) { _ in
-            self.navigationController?.navigationBar.isHidden = false
-        }
+        let noAction = UIAlertAction(title: GitConstants.no, style: .destructive)
         alert.addAction(noAction)
         alert.addAction(yesAction)
         navigationController?.present(alert, animated: true, completion: nil)
@@ -97,10 +85,17 @@ extension GitHubCommitsViewController: UITableViewDataSource, UITableViewDelegat
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let view = Bundle.main.loadNibNamed("GitHubHeaderView", owner: nil, options: nil)?[0] as? GitHubHeaderView else { return nil }
         view.titleLabel.text = GitConstants.title
+        view.delegate = self
         return view
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 75
+    }
+}
+
+extension GitHubCommitsViewController: GitHubHeaderViewProtocol {
+    func didPressRefreshButton() {
+        loadGitHubCommits()
     }
 }

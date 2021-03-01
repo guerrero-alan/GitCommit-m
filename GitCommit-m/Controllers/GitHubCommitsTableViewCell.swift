@@ -14,6 +14,15 @@ class GitHubCommitsTableViewCell: UITableViewCell {
     @IBOutlet weak var shaLabel: UILabel!
 }
 
+protocol GitHubHeaderViewProtocol: class {
+    func didPressRefreshButton()
+}
+
 class GitHubHeaderView: UITableViewHeaderFooterView {
     @IBOutlet weak var titleLabel: UILabel!
+    weak var delegate: GitHubHeaderViewProtocol?
+    
+    @IBAction func refreshButtonPressed(_ sender: UIButton) {
+        delegate?.didPressRefreshButton()
+    }
 }
